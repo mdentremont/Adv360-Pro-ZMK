@@ -28,7 +28,7 @@
         &kp TAB   &kp Q      &kp W            &kp E     &kp R      &kp T  &kp C_VOLUME_DOWN                                                &kp C_PREV &kp Y  &kp U  &kp I     &kp O    &kp P    &kp BSLH
         &kp ESC   &kp A      &kp S            &kp D     &kp F      &kp G  &kp C_PP           &kp LGUI &kp LALT &kp RGUI  &kp LCTRL         &kp C_NEXT &kp H  &kp J  &kp K     &kp L    &kp SEMI &kp SQT
         &kp LSHFT &kp Z      &kp X            &kp C     &kp V      &kp B                              &kp HOME &kp PG_UP                              &kp N  &kp M  &kp COMMA &kp DOT  &kp FSLH &kp RSHFT
-        &mo 1     &kp GRAVE  &lt 3 LA(SPACE)  &kp LEFT  &kp RIGHT                    &kp BSPC &kp DEL &kp END  &kp PG_DN &kp ENTER &kp SPACE                 &kp UP &kp DOWN  &kp LBKT &kp RBKT &mo 1
+        &mo 1     &kp GRAVE  &lt 3 LA(SPACE)  &kp LEFT  &kp RIGHT                    &kp BSPC &kp DEL &kp END  &kp PG_DN &kp ENTER &kp SPACE                 &kp DOWN &kp UP  &kp LBKT &kp RBKT &mo 1
       >;
     };
     fn {
