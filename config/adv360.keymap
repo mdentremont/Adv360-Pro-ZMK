@@ -27,22 +27,43 @@
           bindings = <&kp>, <&kp>;
       };
     };
+    macros {
+      sw_pro_0: sw_pro_0 {
+        compatible = "zmk,behavior-macro";
+        #binding-cells = <0>;
+        bindings = <&to 0>, <&bt BT_SEL 0>;
+      };
+      sw_pro_1: sw_pro_1 {
+        compatible = "zmk,behavior-macro";
+        #binding-cells = <0>;
+        bindings = <&to 1>, <&bt BT_SEL 1>;
+      };
+    };
 
   keymap {
     compatible = "zmk,keymap";
 
-    default_layer {
+    default_layer_mac {
       bindings = <
-        &kp EQUAL &kp N1     &kp N2 &kp N3   &kp N4    &kp N5 &kp C_VOLUME_UP                                                         &mo 2      &kp N6   &kp N7    &kp N8    &kp N9   &kp N0   &kp MINUS
+        &kp EQUAL &kp N1     &kp N2 &kp N3   &kp N4    &kp N5 &kp C_VOLUME_UP                                                         &mo 3      &kp N6   &kp N7    &kp N8    &kp N9   &kp N0   &kp MINUS
         &kp TAB   &kp Q      &kp W  &kp E    &kp R     &kp T  &kp C_VOLUME_DOWN                                                       &kp C_PREV &kp Y    &kp U     &kp I     &kp O    &kp P    &kp BSLH
         &kp ESC   &kp A      &kp S  &kp D    &kp F     &kp G  &kp C_PP           &kp LGUI &kp LALT      &kp RGUI  &kp LCTRL           &kp C_NEXT &kp H    &kp J     &kp K     &kp L    &kp SEMI &kp SQT
         &kp LSHFT &kp Z      &kp X  &kp C    &kp V     &kp B                              &kp LA(SPACE) &kp PG_UP                     &kp N      &kp M    &kp COMMA &kp DOT   &kp FSLH &kp RSHFT
-        &mo 1     &kp GRAVE  &mo 3  &kp LEFT &kp RIGHT                  &kp BSPC &kp DEL  &kp END       &kp PG_DN &kp ENTER &kp SPACE            &kp DOWN &kp UP    &kp LBKT  &kp RBKT &mo 1
+        &mo 2     &kp GRAVE  &mo 4  &kp LEFT &kp RIGHT                  &kp BSPC &kp DEL  &kp END       &kp PG_DN &kp ENTER &kp SPACE            &kp DOWN &kp UP    &kp LBKT  &kp RBKT &mo 1
+      >;
+    };
+    default_layer_win {
+      bindings = <
+        &kp EQUAL &kp N1     &kp N2 &kp N3   &kp N4    &kp N5 &kp C_VOLUME_UP                                                         &mo 3      &kp N6   &kp N7    &kp N8    &kp N9   &kp N0   &kp MINUS
+        &kp TAB   &kp Q      &kp W  &kp E    &kp R     &kp T  &kp C_VOLUME_DOWN                                                       &kp C_PREV &kp Y    &kp U     &kp I     &kp O    &kp P    &kp BSLH
+        &kp ESC   &kp A      &kp S  &kp D    &kp F     &kp G  &kp C_PP           &kp LCTRL &kp LGUI     &kp RGUI  &kp LALT            &kp C_NEXT &kp H    &kp J     &kp K     &kp L    &kp SEMI &kp SQT
+        &kp LSHFT &kp Z      &kp X  &kp C    &kp V     &kp B                              &kp LA(SPACE) &kp PG_UP                     &kp N      &kp M    &kp COMMA &kp DOT   &kp FSLH &kp RSHFT
+        &mo 2     &kp GRAVE  &mo 4  &kp LEFT &kp RIGHT                  &kp BSPC &kp DEL  &kp END       &kp PG_DN &kp ENTER &kp SPACE            &kp DOWN &kp UP    &kp LBKT  &kp RBKT &mo 1
       >;
     };
     fn {
       bindings = <
-        &kp F1 &kp F2 &kp F3 &kp F4 &kp F5 &kp F6  &none                                              &mo 2 &kp F7   &kp F8   &kp F9 &kp F10   &kp F11 &kp F12
+        &kp F1 &kp F2 &kp F3 &kp F4 &kp F5 &kp F6  &none                                              &mo 3 &kp F7   &kp F8   &kp F9 &kp F10   &kp F11 &kp F12
         &trans &trans &trans &trans &trans &trans  &none                                              &none &trans   &trans   &trans &trans    &trans  &trans
         &trans &trans &trans &trans &trans &trans  &none        &trans    &trans &trans &trans        &none &kp LEFT &kp DOWN &kp UP &kp RIGHT &trans  &trans
         &trans &trans &trans &trans &trans &trans                         &trans &trans                     &trans   &trans   &trans &trans    &trans  &trans
@@ -51,7 +72,7 @@
     };
     mod {
       bindings = <
-        &none &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4 &none                                                                     &trans                 &none        &none        &none        &none &none &none
+        &none &sw_pro_0    &sw_pro_1    &none        &none        &none        &none                                                                     &trans                 &none        &none        &none        &none &none &none
         &none &none        &none        &none        &none        &none        &bootloader                                                               &bootloader            &none        &none        &none        &none &none &none
         &none &none        &none        &none        &none        &none        &none                   &none &none &bt BT_CLR &none                      &rgb_ug RGB_MEFS_CMD 5 &none        &none        &none        &none &none &none
         &none &none        &none        &none        &macro_ver   &none                                      &none &none                                                        &none        &none        &none        &none &none &none
